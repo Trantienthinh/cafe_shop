@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" stylesheets="@../Assets/HomeUserStyle.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeUserController">
+   <children>
+      <AnchorPane>
+         <children>
+            <BorderPane layoutX="0.8" layoutY="1.0" prefHeight="600.0" prefWidth="1300.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.7999999999999545" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+               <top>
+                  <AnchorPane prefHeight="26.0" prefWidth="1299.0" styleClass="bg-white" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="14.0" layoutY="1.0" prefHeight="35.0" prefWidth="156.0" text="CafeShop" textFill="#159678">
+                           <font>
+                              <Font name="Bell MT Bold" size="29.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="#159678" glyphName="COFFEE" selectionFill="#159678" />
+                           </graphic>
+                        </Label>
+                        <MenuButton fx:id="us_taiKhoan" layoutX="1149.6" layoutY="5.0" mnemonicParsing="false" styleClass="nav-btn" text="Tài khoản" textFill="#159678" AnchorPane.rightAnchor="34.40000000000009">
+                           <items>
+                              <MenuItem fx:id="nutCapNhatTT" mnemonicParsing="false" onAction="#nutCapNhatTTCaNhan" text="Cập nhật thông tin cá nhân" />
+                              <MenuItem fx:id="nutDoiMK" mnemonicParsing="false" onAction="#nutDoiMatKhau" text="Đổi mật khẩu" />
+                              <MenuItem fx:id="nutDangXuat" mnemonicParsing="false" onAction="#nutDangXuat" text="Đăng xuất" />
+                           </items>
+                           <graphic>
+                              <FontAwesomeIcon fill="#159678" glyphName="USER" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </MenuButton>
+                        <Separator layoutX="179.0" maxHeight="-Infinity" orientation="VERTICAL" prefHeight="42.0" prefWidth="3.0" />
+                        <TextField fx:id="thanhTimKiem" layoutX="201.0" layoutY="5.0" prefHeight="31.0" prefWidth="352.0" promptText="Nhập vào sản phẩm muốn tìm kiếm" styleClass="search-btn" />
+                        <FontAwesomeIcon fx:id="nutTimKiem" fill="#796c6c" glyphName="SEARCH" layoutX="558.0" layoutY="28.0" onMouseClicked="#hienThiSPTheoTimKiem" size="20" text="" />
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane minWidth="-Infinity" prefHeight="514.0" prefWidth="50.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="515.0" prefWidth="50.0" styleClass="bg-white" AnchorPane.bottomAnchor="0.6000000000000227" AnchorPane.topAnchor="1.0">
+                           <children>
+                              <Button fx:id="nutGioHang" layoutY="150.0" mnemonicParsing="false" onAction="#dieuHuong" prefHeight="50.0" prefWidth="50.0" styleClass="db-btn">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#c7bcbc" glyphName="SHOPPING_CART" size="23" styleClass="icon" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="nutSanPham" layoutY="50.0" mnemonicParsing="false" onAction="#dieuHuong" prefHeight="50.0" prefWidth="50.0" styleClass="db-btn">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#c7bcbc" glyphName="COFFEE" size="23" styleClass="icon" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="nutTrangChu" mnemonicParsing="false" onAction="#dieuHuong" prefHeight="50.0" prefWidth="50.0" styleClass="db-btn">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#c7bcbc" glyphName="HOME" size="23" styleClass="icon" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="nutThongBao" layoutY="100.0" mnemonicParsing="false" onAction="#dieuHuong" prefHeight="50.0" prefWidth="50.0" styleClass="db-btn">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#c7bcbc" glyphName="BELL" size="23" styleClass="icon" text="" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="558.0" prefWidth="1230.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="formTrangChu" layoutX="-0.8" prefHeight="558.0" prefWidth="1250.0" styleClass="dasboard_background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="23.0" layoutY="27.0" text="Hi! Chào mừng đến với Cafe Shop" textFill="#6e6e6e">
+                                 <font>
+                                    <Font name="System Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <VBox layoutX="23.0" layoutY="76.0" prefHeight="433.0" prefWidth="702.0">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="94.0" text="Hôm nay">
+                                       <font>
+                                          <Font name="Bell MT" size="16.0" />
+                                       </font></Label>
+                                    <HBox prefHeight="202.0" prefWidth="714.0" styleClass="bg-white">
+                                       <children>
+                                          <AnchorPane prefHeight="202.0" prefWidth="218.0" styleClass="lab-border">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="20.0" top="20.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label layoutX="34.0" layoutY="62.0" text="Cà phê Capuchino" textFill="#10b174">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="202.0" prefWidth="226.0" styleClass="lab-border">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="20.0" top="20.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label layoutX="62.0" layoutY="68.0" text="Cà phê Sữa " textFill="#10b174">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="216.0" layoutY="10.0" prefHeight="202.0" prefWidth="218.0" styleClass="lab-border">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label layoutX="31.0" layoutY="68.0" text="Cà phê trứng muối" textFill="#10b174">
+                                                   <font>
+                                                      <Font name="System Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="194.0" prefWidth="694.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="174.0" prefWidth="345.0" styleClass="deal-background">
+                                             <children>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ImageView fx:id="hinhNoiBat" fitHeight="184.0" fitWidth="303.0" layoutX="34.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/hot.jpg" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Button layoutX="138.0" layoutY="92.0" mnemonicParsing="false" style="-fx-background-color: #159678;" styleClass="home-btn" text="Mua ngay" />
+                                                      <Label contentDisplay="CENTER" layoutX="44.0" layoutY="53.0" text="Sản phẩm bán chạy hôm nay" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="19.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox prefHeight="182.0" prefWidth="170.0" styleClass="bg-white">
+                                             <children>
+                                                <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="118.0" text="Số sản phầm đã mua" textFill="#159678">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="home_tongSP" contentDisplay="CENTER" layoutX="20.0" layoutY="10.0" prefHeight="50.0" prefWidth="159.0" text="0" textFill="#159678">
+                                                   <font>
+                                                      <Font name="System Bold" size="33.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label contentDisplay="CENTER" layoutX="20.0" layoutY="10.0" prefHeight="50.0" prefWidth="118.0" text="Tháng này" textFill="#159678">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="304.0" layoutY="10.0" prefHeight="185.0" prefWidth="174.0" styleClass="bg-white">
+                                             <children>
+                                                <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="118.0" text="Chi phí" textFill="#159678">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label fx:id="home_tongTien" contentDisplay="CENTER" prefHeight="50.0" prefWidth="159.0" text="\$0.0" textFill="#159678">
+                                                   <font>
+                                                      <Font name="System Bold" size="33.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="118.0" text="Tháng này" textFill="#159678">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Separator layoutX="762.0" layoutY="62.0" orientation="VERTICAL" prefHeight="448.0" prefWidth="2.0" />
+                              <ScrollPane fx:id="scrollPaneSPDaMua" layoutX="797.0" layoutY="113.0" prefHeight="394.0" prefWidth="426.0" styleClass="transparent">
+                                 <content>
+                                    <VBox fx:id="vungChuaSPDaMua" prefHeight="394.0" prefWidth="417.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="formSanPham" layoutY="-0.8" prefHeight="514.0" prefWidth="1248.0" styleClass="dasboard_background" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-1.0">
+                           <children>
+                              <ScrollPane layoutX="14.0" layoutY="41.0" prefHeight="188.0" prefWidth="1198.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.800000000000182" AnchorPane.topAnchor="41.0">
+                                 <content>
+                                    <HBox fx:id="hopChuaSPNB" alignment="CENTER_LEFT" prefHeight="178.0" prefWidth="1514.0" spacing="20.0">
+                                       <styleClass>
+                                          <String fx:value="bg-white" />
+                                          <String fx:value="bg-radius" />
+                                       </styleClass></HBox>
+                                 </content>
+                                 <styleClass>
+                                    <String fx:value="bg-white" />
+                                    <String fx:value="bg-radius" />
+                                 </styleClass>
+                              </ScrollPane>
+                              <Label layoutX="15.0" layoutY="18.0" text="Sản phẩm nổi nật" textFill="#817f7f">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane layoutX="15.2" layoutY="270.4" prefHeight="274.0" prefWidth="1218.0" styleClass="transparent" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="270.0">
+                                 <content>
+                                    <GridPane fx:id="hopChuaSP" prefHeight="19.0" prefWidth="64.0">
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                              <Label layoutX="15.0" layoutY="248.0" text="Sản phẩm " textFill="#817f7f">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="formTimKiem" layoutX="316.0" layoutY="153.0" prefHeight="557.6" prefWidth="1248.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label fx:id="thongBaoTK" layoutX="20.0" layoutY="10.0" text="Thông báo">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane layoutX="20.0" layoutY="43.0" prefHeight="493.0" prefWidth="1208.0" styleClass="transparent">
+                                 <content>
+                                    <GridPane fx:id="hopChuaSPTheoTimKiem" prefHeight="30.0" prefWidth="90.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="formGioHang" layoutX="-1.0" prefHeight="557.6" prefWidth="1248.8" visible="false" AnchorPane.bottomAnchor="0.7999999999999545" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox layoutX="25.0" layoutY="78.0" prefHeight="376.0" prefWidth="1200.0" styleClass="bg-white">
+                                 <children>
+                                    <HBox prefHeight="38.0" prefWidth="1191.0" styleClass="bg-white">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="38.0" prefWidth="67.0" text="STT">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="gh-border" />
+                                                <String fx:value="back-table" />
+                                             </styleClass>
+                                          </Label>
+                                          <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="603.0" text="Sản Phẩm ">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="gh-border" />
+                                                <String fx:value="back-table" />
+                                             </styleClass>
+                                          </Label>
+                                          <Label alignment="CENTER" layoutX="77.0" layoutY="10.0" prefHeight="38.0" prefWidth="178.0" text="Số lượng ">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="gh-border" />
+                                                <String fx:value="back-table" />
+                                             </styleClass>
+                                          </Label>
+                                          <Label alignment="CENTER" layoutX="584.0" layoutY="10.0" prefHeight="38.0" prefWidth="190.0" text="Đơn giá ">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="gh-border" />
+                                                <String fx:value="back-table" />
+                                             </styleClass>
+                                          </Label>
+                                          <Label alignment="CENTER" layoutX="672.0" layoutY="10.0" prefHeight="38.0" prefWidth="164.0" text="Thành tiền">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="gh-border" />
+                                                <String fx:value="back-table" />
+                                             </styleClass>
+                                          </Label>
+                                          <Label alignment="CENTER" layoutX="950.0" layoutY="10.0" prefHeight="38.0" prefWidth="96.0" text="Xóa">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="gh-border" />
+                                                <String fx:value="back-table" />
+                                             </styleClass>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <ScrollPane prefHeight="342.0" prefWidth="1200.0">
+                                       <content>
+                                          <VBox fx:id="hopChuaSPGioHang" prefHeight="339.0" prefWidth="1198.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                              <Label layoutX="25.0" layoutY="28.0" text="Giỏ hảng của tôi" textFill="#159678">
+                                 <font>
+                                    <Font name="System Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="nutXoaSpTrongGio" layoutX="1046.0" layoutY="471.0" mnemonicParsing="false" onAction="#nutXoaSPTrongGio" prefHeight="33.0" prefWidth="178.0" styleClass="btn-gh" text="Xóa tất cả sản phẩm ">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="nutThemSPVaoGio" layoutX="844.0" layoutY="471.0" mnemonicParsing="false" onAction="#nutThemSPVaoGio" prefHeight="34.0" prefWidth="186.0" styleClass="btn-gh" text="Thêm sản phẩm vào giỏ ">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="nutThanhToan" layoutX="647.0" layoutY="471.0" mnemonicParsing="false" onAction="#nutThanhToan" prefHeight="33.0" prefWidth="178.0" styleClass="btn-gh" text="Thanh toán ">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="formDoiMatKhau" layoutX="354.0" layoutY="117.0" prefHeight="557.6" prefWidth="1248.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="379.0" layoutY="30.0" prefHeight="454.0" prefWidth="478.0">
+                                 <children>
+                                    <Label layoutX="26.0" layoutY="58.0" text="CafeShop - " />
+                                    <Label layoutX="88.0" layoutY="57.0" text="tên tài khoản ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="24.0" layoutY="82.0" text="Đổi mật khẩu">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="26.0" layoutY="123.0" text="Mật khẩu của bạn phải tối thiếu 8 ký tự ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField fx:id="mk_matKhauCu" layoutX="26.0" layoutY="156.0" prefHeight="50.0" prefWidth="423.0" promptText="Nhập mật khẩu cũ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="bg-radius" />
+                                          <String fx:value="lab-border" />
+                                       </styleClass>
+                                    </PasswordField>
+                                    <PasswordField fx:id="mk_matKhauMoi" layoutX="27.0" layoutY="226.0" prefHeight="50.0" prefWidth="423.0" promptText="Nhập mật khẩu mới">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="bg-radius" />
+                                          <String fx:value="lab-border" />
+                                       </styleClass>
+                                    </PasswordField>
+                                    <PasswordField fx:id="mk_NhapLaiMKMoi" layoutX="27.0" layoutY="295.0" prefHeight="50.0" prefWidth="423.0" promptText="Nhập lại mật khẩu mới">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="bg-radius" />
+                                          <String fx:value="lab-border" />
+                                       </styleClass>
+                                    </PasswordField>
+                                    <Button fx:id="mk_nutDoiMatKhau" layoutX="27.0" layoutY="378.0" mnemonicParsing="false" onAction="#nutXacNhanDoiMK" prefHeight="54.0" prefWidth="426.0" text="Đổi mật khẩu">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="bg-radius" />
+                                          <String fx:value="btn-gh" />
+                                       </styleClass>
+                                    </Button>
+                                    <FontAwesomeIcon fx:id="mk_iconthoat" glyphName="TIMES" layoutX="422.0" layoutY="35.0" size="30" text="" wrappingWidth="23.571428298950195" />
+                                    <FontAwesomeIcon fx:id="mk_iconQuayLai" glyphName="ANGLE_LEFT" layoutX="27.0" layoutY="35.0" size="30" />
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="bg-white" />
+                                    <String fx:value="bg-radius" />
+                                 </styleClass>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="formCapNhatTTCN" layoutX="624.0" layoutY="157.0" prefHeight="557.6" prefWidth="1248.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="157.0" layoutY="22.0" prefHeight="506.0" prefWidth="946.0" styleClass="bg-white">
+                                 <children>
+                                    <Separator layoutX="473.0" layoutY="23.0" orientation="VERTICAL" prefHeight="460.0" prefWidth="9.0" />
+                                    <Label layoutX="35.0" layoutY="14.0" text="Thông tin cũ " textFill="#159678">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="510.0" layoutY="14.0" text="Thông tin mới" textFill="#159678">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="37.0" layoutY="79.0" text="Họ và tên" textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttc_tenKH" editable="false" layoutX="37.0" layoutY="112.0" prefHeight="39.0" prefWidth="402.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="37.0" layoutY="167.0" text="Số điện thoại" textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttc_soDTKH" editable="false" layoutX="37.0" layoutY="198.0" prefHeight="39.0" prefWidth="402.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="37.0" layoutY="248.0" text="Địa chỉ " textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttc_daiChiKH" editable="false" layoutX="37.0" layoutY="279.0" prefHeight="39.0" prefWidth="402.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="37.0" layoutY="334.0" text="Giới tính" textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttc_gioiTinhKH" editable="false" layoutX="37.0" layoutY="365.0" prefHeight="39.0" prefWidth="189.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="255.0" layoutY="334.0" text="Ngày sinh" textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttc_ngaySinhKH" editable="false" layoutX="255.0" layoutY="365.0" prefHeight="39.0" prefWidth="184.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="510.0" layoutY="78.0" text="Họ và tên" textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttm_tenKH" layoutX="510.0" layoutY="111.0" prefHeight="39.0" prefWidth="402.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="510.0" layoutY="166.0" text="Số điện thoại" textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttm_soDTKH" layoutX="510.0" layoutY="197.0" prefHeight="39.0" prefWidth="402.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="510.0" layoutY="247.0" text="Địa chỉ " textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttm_diaChiKH" layoutX="510.0" layoutY="278.0" prefHeight="39.0" prefWidth="402.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="510.0" layoutY="333.0" text="Giới tính" textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttm_gioiTinhKH" layoutX="510.0" layoutY="364.0" prefHeight="39.0" prefWidth="189.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="728.0" layoutY="333.0" text="Ngày sinh" textFill="#159678">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ttm_ngaySinhKH" layoutX="728.0" layoutY="364.0" prefHeight="39.0" prefWidth="184.0" styleClass="lab-border">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="ttm_nutCapNhat" layoutX="510.0" layoutY="440.0" mnemonicParsing="false" onAction="#nutXacNhanCNTTCN" prefHeight="42.0" prefWidth="402.0" styleClass="btn-gh" text="Cập nhật">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="formThongBao" layoutY="-1.0" prefHeight="557.6" prefWidth="1248.8" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                           <children>
+                              <Label layoutX="25.0" layoutY="14.0" text="Thông báo!">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane fx:id="scrollPaneThongBao" layoutX="-1.0" layoutY="47.0" prefHeight="510.0" prefWidth="1246.0" styleClass="transparent">
+                                 <content>
+                                    <AnchorPane prefHeight="511.0" prefWidth="1249.0">
+                                       <children>
+                                          <VBox fx:id="vungChuaTB" layoutX="30.0" layoutY="-1.0" prefHeight="507.0" prefWidth="1178.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

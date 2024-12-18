@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../Assets/loginStyle.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane fx:id="lg_loginForm" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.8000000000000114" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="33.0" layoutY="66.0" styleClass="head-lable" text="Đăng nhập " textFill="#1e8089">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="lg_username" layoutX="33.0" layoutY="154.0" prefHeight="30.0" prefWidth="231.0" promptText="tài khoản" styleClass="textField" />
+                  <PasswordField fx:id="lg_password" layoutX="34.0" layoutY="194.0" prefHeight="30.0" prefWidth="231.0" promptText="mật khẩu" styleClass="textField" />
+                  <Button fx:id="lg_loginbtn" layoutX="33.0" layoutY="266.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="43.0" prefWidth="231.0" styleClass="login-btn" text="Đăng nhập" />
+                  <Hyperlink fx:id="lg_forgotPass" layoutX="30.0" layoutY="232.0" onAction="#switchForgotPass" text="Quên mật khẩu?">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="rg_registerForm" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="33.0" layoutY="28.0" styleClass="head-lable" text="Đăng ký  " textFill="#1e8089">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="rg_username" layoutX="33.0" layoutY="237.0" prefHeight="30.0" prefWidth="231.0" promptText="tài khoản" styleClass="textField" />
+                  <PasswordField fx:id="rg_password" layoutX="33.0" layoutY="277.0" prefHeight="30.0" prefWidth="231.0" promptText="mật khẩu" styleClass="textField" />
+                  <Button fx:id="rg_registerBtn" layoutX="33.0" layoutY="324.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="43.0" prefWidth="231.0" styleClass="login-btn" text="Đăng ký" />
+                  <ComboBox fx:id="rg_gender" layoutX="33.0" layoutY="200.0" prefHeight="26.0" prefWidth="102.0" promptText="Giới tính" styleClass="comboBox" />
+                  <ComboBox fx:id="rg_dob" layoutX="153.0" layoutY="201.0" prefHeight="26.0" prefWidth="111.0" promptText="Năm sinh" styleClass="comboBox" stylesheets="@../Assets/loginStyle.css" />
+                  <TextField fx:id="rg_address" layoutX="33.0" layoutY="159.0" prefHeight="30.0" prefWidth="231.0" promptText="Địa chỉ" styleClass="textField" />
+                  <TextField fx:id="rg_phone" layoutX="33.0" layoutY="119.0" prefHeight="30.0" prefWidth="231.0" promptText="Số điện thoại" styleClass="textField" />
+                  <TextField fx:id="rg_fullName" layoutX="33.0" layoutY="81.0" prefHeight="30.0" prefWidth="231.0" promptText="Họ và tên" styleClass="textField" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="side_form" prefHeight="400.0" prefWidth="300.0" styleClass="gradient" stylesheets="@../Assets/loginStyle.css" AnchorPane.bottomAnchor="0.0">
+               <children>
+                  <Label layoutX="78.0" layoutY="265.0" text="Tạo tài khoản" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="side_createBtn" layoutX="34.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="43.0" prefWidth="231.0" styleClass="create-btn" text="Đăng ký" />
+                  <FontAwesomeIcon fill="#f2eeee" glyphName="COFFEE" layoutX="78.0" layoutY="172.0" size="120" wrappingWidth="15.20001220703125">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </FontAwesomeIcon>
+                  <Label layoutX="102.0" layoutY="189.0" text="Cafe Shop" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="side_alreadyHave" layoutX="34.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="43.0" prefWidth="231.0" styleClass="create-btn" text="Đã có tài khoản" visible="false" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="fp_questionForm" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" visible="false">
+               <children>
+                  <Label layoutX="33.0" layoutY="66.0" styleClass="head-lable" text="Quên mật khẩu" textFill="#1e8089">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="fp_comfirmBtn" layoutX="34.0" layoutY="270.0" mnemonicParsing="false" onAction="#forgotPass" prefHeight="43.0" prefWidth="231.0" styleClass="login-btn" text="Xác nhận" />
+                  <ComboBox fx:id="fp_dob" layoutX="34.0" layoutY="170.0" prefHeight="35.0" prefWidth="231.0" promptText="Năm sinh" styleClass="comboBox" />
+                  <TextField fx:id="fp_fullname" layoutX="34.0" layoutY="213.0" prefHeight="35.0" prefWidth="231.0" promptText="Họ và tên" styleClass="textField" />
+                  <Button fx:id="fb_backBtn" layoutX="109.0" layoutY="345.0" mnemonicParsing="false" onAction="#backLoginForm" prefHeight="30.0" prefWidth="82.0" styleClass="login-btn" text="Quay lại">
+                     <graphic>
+                        <FontAwesomeIcon fill="#f4efef" glyphName="ANGLE_LEFT" size="20" />
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="fp_username" layoutX="34.0" layoutY="125.0" prefHeight="35.0" prefWidth="231.0" promptText="Tài khoản" styleClass="textField" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="fp_changePassword" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" visible="false">
+               <children>
+                  <Label layoutX="33.0" layoutY="66.0" styleClass="head-lable" text="Quên mật khẩu" textFill="#1e8089">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="fp_changeBtn" layoutX="34.0" layoutY="239.0" mnemonicParsing="false" onAction="#changePass" prefHeight="43.0" prefWidth="231.0" styleClass="login-btn" text="Thay đổi" />
+                  <Button fx:id="fp_backBtn2" layoutX="109.0" layoutY="345.0" mnemonicParsing="false" onAction="#backQuestionForm" prefHeight="30.0" prefWidth="82.0" styleClass="login-btn" text="Quay lại">
+                     <graphic>
+                        <FontAwesomeIcon fill="#f4efef" glyphName="ANGLE_LEFT" size="20" />
+                     </graphic>
+                  </Button>
+                  <PasswordField fx:id="fp_oldPass" layoutX="34.0" layoutY="129.0" prefHeight="35.0" prefWidth="231.0" promptText="Mật khẩu mới" styleClass="textField" />
+                  <PasswordField fx:id="fp_newPass" layoutX="34.0" layoutY="175.0" prefHeight="35.0" prefWidth="231.0" promptText="Xác nhận mật khẩu mới" styleClass="textField" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,41 @@
+.white-backgroud{
+    -fx-background-color: #fff;
+}
+
+.transparent{
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.round-layout{
+    -fx-border-radius: 50;
+    -fx-border-color: #D7D7D7;
+}
+
+.selected{
+    -fx-background-color: #E4E4E4;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0), 10, 0, 0, 10);
+}
+
+.search-btn{
+    -fx-background-color: #D7D7D7;
+    -fx-border-color: transparent;
+}
+
+.btn-sp{
+    -fx-background-color: #159678;
+    -fx-text-fill: #fff;
+}
+
+.btn-show{
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-border-color: #fff;
+}
+
+.btn-show:hover{
+    -fx-background-color: #fff;
+    -fx-text-fill: #159678;
+}

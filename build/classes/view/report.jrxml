@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="283" pageHeight="425" columnWidth="243" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dce48fbd-55b4-4540-8a58-b1bdc54dee01">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="getorderId" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT 
+    Orders.order_id,
+    Orders.customer_id,
+    Customer.customer_name,
+    Customer.phone,
+    Customer.address,
+    Orders.total_price,
+    Orders.create_at AS order_date,
+    Order_detail.quantity,
+    Book.title AS book_title,
+    Book.price AS book_price
+FROM 
+    Orders
+INNER JOIN 
+    Customer ON Orders.customer_id = Customer.customer_id
+INNER JOIN 
+    Order_detail ON Orders.order_id = Order_detail.order_id
+INNER JOIN 
+    Book ON Order_detail.book_id = Book.book_id
+WHERE 
+    Orders.order_id = $P{getorderId};]]>
+	</queryString>
+	<field name="order_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_price" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="order_date" class="java.sql.Timestamp"/>
+	<field name="quantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="book_title" class="java.lang.String"/>
+	<field name="book_price" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="85" y="12" width="73" height="27" uuid="04d6a655-f551-4922-bbee-996c938c6a47"/>
+				<textElement>
+					<font fontName="Agency FB" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BookStore]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="49" width="51" height="12" uuid="6fc9be37-a4a3-469f-8dec-21e7ff893cc6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Khách hàng  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="61" width="51" height="12" uuid="569bee58-d200-45ec-a117-80b41e3950e4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Số điện thoại:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="73" width="51" height="12" uuid="62604248-404d-4469-9470-f43abbe7b2f7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Địa chỉ'          : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="173" y="49" width="70" height="12" uuid="66a03cfa-fb2c-47fc-8257-5ab432c8f933"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="61" width="70" height="12" uuid="b4dc294b-aea5-497f-911b-c460a92128a4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="73" width="70" height="12" uuid="764b3d8b-b508-4e04-a5cd-08ed13327d67"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="13" width="122" height="20" uuid="1699fb70-01e7-4a4b-97d5-5a2f5c4c3cd5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sách]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="13" width="63" height="20" uuid="373c11e0-b5de-4005-aadf-a0c743f00724"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Giá]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="13" width="58" height="20" uuid="1417f0d5-a62f-40e2-bfa3-f40d6c2db379"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Số lượng]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="12" width="243" height="1" uuid="79e52520-2e0d-4268-bddc-e040499e963d"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="3" width="243" height="1" uuid="8e94192f-4b40-4cdd-8c31-37d8cc817016"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="3" width="122" height="20" uuid="b8cac298-229d-462d-a5ed-4e2c715577ca"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{book_title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="3" width="58" height="20" uuid="00a41c04-52eb-4768-8688-86db549ac83d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="3" width="63" height="20" uuid="1160656d-300e-454e-b94c-252cf340f08b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{book_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="19" splitType="Stretch">
+			<staticText>
+				<reportElement x="168" y="2" width="52" height="15" uuid="26761eda-401b-4150-9471-55909d4b8448"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thành tiền: $]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="2" width="23" height="15" uuid="0771f389-ff57-42e2-8a47-d99432558143"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="35" y="14" width="224" height="20" uuid="6f88290f-dadd-4ed9-b83a-e9e444b6fac6"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Cảm ơn bạn đã mua hàng của BookStore]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="34" width="74" height="14" uuid="c1346a57-e4a9-4669-a87a-8f5240fe81ae"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{order_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

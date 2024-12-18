@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="1170.0" styleClass="bg-white" stylesheets="@../Assets/cardNotificationStyle.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CardNotificationController">
+   <children>
+      <Label fx:id="nhanIcon" alignment="CENTER" layoutX="33.0" layoutY="21.0" prefHeight="100.0" prefWidth="100.0" styleClass="radius">
+         <graphic>
+            <FontAwesomeIcon fx:id="icon" fill="WHITE" glyphName="PINTEREST" size="40" />
+         </graphic>
+      </Label>
+      <Label fx:id="tieuDe" layoutX="194.0" layoutY="6.0" text="Tiêu đề">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="thoiGian" layoutX="198.0" layoutY="110.0" text="ngày">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="noiDUng" layoutX="197.0" layoutY="45.0" prefHeight="59.0" prefWidth="928.0" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="10.0" />
+   </padding>
+</AnchorPane>

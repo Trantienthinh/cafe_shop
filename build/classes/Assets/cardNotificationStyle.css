@@ -1,0 +1,15 @@
+.radius{
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+}
+
+.bg-white{
+    -fx-background-color: #fff;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+.trans{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}

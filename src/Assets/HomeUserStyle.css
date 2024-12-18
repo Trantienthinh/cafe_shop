@@ -1,0 +1,89 @@
+.header{
+    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);
+    -fx-border-color: #fff;
+    -fx-border-width: 0 0 0 .8px;
+}
+
+.nav-btn{
+    -fx-background-color: #fff;
+    -fx-border-color: #fff;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+    /*-fx-text-fill: #fff;*/
+    -fx-font-size: 14px;
+}
+
+.dasboard_background{
+    -fx-background-color: #F3F3F3;
+}
+
+.db-btn{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.db-btn:hover{
+    -fx-background-color: #61e7c3;
+    -fx-text-fill: #fff;
+}
+
+.db-btn:active{
+    -fx-background-color: #61e7c3
+}
+
+.bg-white{
+    -fx-background-color: #fff;
+}
+
+.bg-radius{
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.search-btn{
+    -fx-border-color: transparent;
+    -fx-background-radius: 30px;
+}
+
+.transparent{
+    -fx-background-color: transparent;
+}
+
+.home-btn{
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-text-fill: #fff;
+}
+
+.deal-background{
+    -fx-background-color: #098c53;
+}
+
+.lab-border{
+    -fx-border-color: #159678;
+}
+
+.gh-border{
+    -fx-border-color:#fff;
+}
+
+.back-table{
+    -fx-background-color: #159678;
+    -fx-text-fill: #fff;
+}
+
+.btn-gh{
+    -fx-background-color: #159678;
+    -fx-text-fill: #fff;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.btn-gh:hover{
+    -fx-background-color: #fff;
+    -fx-text-fill: #098c53;
+    -fx-border-color: #159678;
+}
+
+
+
